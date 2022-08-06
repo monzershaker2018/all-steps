@@ -1,0 +1,20 @@
+// in api route
+Route::group(['middleware' => 'api'], function () {
+
+    Route::apiResource('mobiles' , 'App\Http\Controllers\MobileController');
+
+});
+
+// in post man we but in body -> raw the resquset data & in header (accept - application/json)
+
+// get all data  (get)
+http://192.168.43.235/api/mobiles
+
+// save data (post)  && in header add  ( contect type - application/json)
+http://192.168.43.235/api/mobiles         
+
+// update data (put) 
+http://192.168.43.235/api/mobiles/1
+
+// delete data (delete) 
+http://192.168.43.235/api/mobiles/1

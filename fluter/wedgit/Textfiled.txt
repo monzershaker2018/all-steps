@@ -1,0 +1,21 @@
+TextField(
+                  //showCursor: false, // hide curser
+                  //mouseCursor: MouseCursor.defer,
+                  // maxLength: 5,
+                  // minLines: 2, // least line to shown
+                  //  obscureText: true, // using with password
+                  keyboardType: TextInputType.number, // only email input
+                  decoration: InputDecoration(
+                    prefixIcon: Icon(Icons.email),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    filled: true,
+                    fillColor: Colors.blue[50],
+                    labelText: "البريد الإلكتروني",
+                    //hintText:
+                  ),
+                ),

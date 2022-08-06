@@ -1,0 +1,78 @@
+import 'package:flutter/material.dart';
+void main(){
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Home() //create new class for 'home' property of MaterialApp()
+                   //to escape 'No MaterialLocalizations found' error
+    );
+  }
+}
+
+class Home extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return  Scaffold(
+          body: Center( 
+                 child: ElevatedButton(
+                   child:Text("Show Alert"),
+                   onPressed: (){
+                      showDialog(context: context, builder: (BuildContext context){
+                         return AlertDialog(
+                             title: Text("ERROR"),
+                             content: Text("No MaterialLocalizations found Error"),
+                         );
+                      });
+                   },
+                 ),
+             )
+       );
+  }
+}
+
+
+
+------------------------------
+
+
+   showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                          // title: Text("بحث"),
+                          content: TextField(
+                            textAlign: TextAlign.right,
+                            autofocus: true,
+                            decoration: InputDecoration(
+                              border: OutlineInputBorder(),
+                              // labelText: '',
+                              hintText: 'أدخل اسم الهاتف',
+                            ),
+                          ),
+                          actions: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                ElevatedButton(
+                                    style: ElevatedButton.styleFrom(
+                                      primary: Colors.green,
+                                    ),
+                                    onPressed: () {},
+                                    child: Text('بحث')),
+                                ElevatedButton(
+                                    style: ElevatedButton.styleFrom(
+                                      primary: Colors.red,
+                                    ),
+                                    onPressed: () {
+                                      Navigator.of(context).pop();
+                                    },
+                                    child: Text('إلغاء')),
+                              ],
+                            ),
+                          ],
+                        );
+                      });

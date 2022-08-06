@@ -1,0 +1,17 @@
+body: Column(
+mainAxisAlignment: MainAxisAlignment.center, //centerlize the col 
+crossAxisAlignment: CrossAxisAlignment.center, //center the row
+          children: [
+            Container(
+              color: Colors.brown,
+              child: Text("Monzer shaker"),
+              height: 30,
+              width: 170,
+             
+            ),
+          ],
+        ),
+
+
+
+https://www.geeksforgeeks.org/flutter-appbar-widget/?ref=leftbar-rightbar

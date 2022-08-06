@@ -1,0 +1,4 @@
+// in the home of material app but this code
+ home: Directionality(
+        textDirection: TextDirection.rtl,
+        child: Scaffold(

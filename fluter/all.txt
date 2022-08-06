@@ -1,0 +1,69 @@
+// in column to take all the width
+  crossAxisAlignment: CrossAxisAlignment.stretch,
+// in Scafold to hide the pixeled msg
+resizeToAvoidBottomInset: false,
+// to ad  a textfiled
+ TextField(
+                    autofocus: true,
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Password',
+                      hintText: 'Enter Password',
+                    ),
+                  ),
+// move from screen to anthor
+  child: Builder(
+            builder: (context) => Center(
+              child: ElevatedButton(
+                child: Text("Foo"),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const SecondRoute()),
+                  );
+                },
+              ),
+            ),
+          ),
+// back to screen
+  onPressed: () {
+              // Navigate back to first route when tapped.
+              // Within the SecondRoute widget
+
+              Navigator.pop(context);
+            },
+// add a shadow to ur image
+Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  shape: BoxShape.circle,
+                  // ignore: prefer_const_literals_to_create_immutables
+                  boxShadow: [
+                    BoxShadow(
+                        blurRadius: 10, color: Colors.blue, spreadRadius: 3),
+                  ],
+                ),
+                child: CircleAvatar(
+                  radius: 50,
+                  backgroundImage: NetworkImage(
+                    "https://scontent.fkrt3-2.fna.fbcdn.net/v/t39.30808-6/239466307_3064298380474518_4797505639867905581_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=8bfeb9&_nc_eui2=AeG6t75FOHAe5H19uLId5dddgcd0IsMGlB2Bx3QiwwaUHb5fH6z7TyAsLFVcsXuLXd_8qVuincLommrMRxXtrw8D&_nc_ohc=wtdTluskhdkAX9oFjHU&_nc_zt=23&_nc_ht=scontent.fkrt3-2.fna&oh=00_AT8JWs_nOPQGVYrAL0kgg9JuSIl77Zr0xVu6beSQ-h2vMg&oe=623B20C8",
+                  ),
+                ),
+              ),
+// add graidend color 
+ return Container(
+      decoration: const BoxDecoration(
+          gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [Colors.purple, Colors.orange])),
+      child: Scaffold(
+          // By defaut, Scaffold background is white
+          // Set its value to transparent
+          backgroundColor: Colors.transparent,
+          appBar: AppBar(
+            backgroundColor: Colors.black45,
+            title: const Text('Kindacode.com'),
+          ),

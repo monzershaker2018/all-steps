@@ -1,0 +1,11 @@
+// add image from desktop
+
+go to pubspec.yaml & uncomment assest
+
+Image(
+  image: AssetImage('images/download.png'),
+)
+
+// add image from net
+
+  image: AssetImage('images/download.png'),

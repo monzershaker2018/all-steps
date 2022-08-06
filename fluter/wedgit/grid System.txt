@@ -1,0 +1,18 @@
+ Container(
+                height: 400,
+                child: GridView.count(
+                  padding: const EdgeInsets.all(20),
+                  //crossAxisSpacing: 10, // space between row vertical
+                  // mainAxisSpacing: 10, // space under row horizantel
+                  crossAxisCount: 2, // cont of rows
+                  children: <Widget>[
+                   
+                    myCat(),
+                    myCat(),
+                    myCat(),
+                    myCat(),
+                    myCat(),
+                    myCat(),
+                  ],
+                ),
+              )

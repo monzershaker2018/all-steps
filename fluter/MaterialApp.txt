@@ -1,0 +1,32 @@
+MatrialAap //big containter
+runApp( MatrailApp (
+home : Center (
+child : Text(" first"),
+
+),
+
+
+
+)
+
+
+)
+// -------------------------------------------------------------- //
+Scaffold      => توضع في الهوم لكي تعطي شكل تطبيق الموبايل وبداخلها خصائص كثيرة
+Scaffold(
+appBar : AppBar(
+title : Text("my project"), => اسم التطبيق في الأعلي
+backgroundColor : Colors.  , => لون خلفية الجزء العلوي من اللتطبيق
+centerTitle : true , جعل اسم التطبيق في المنتصف
+
+),
+backgroundColor: Colors. , => لون خلفية الشاشة
+body : Center(
+child : Text("Hello World");
+),
+
+)
+
+
+
+https://api.flutter.dev/flutter/material/Scaffold-class.html

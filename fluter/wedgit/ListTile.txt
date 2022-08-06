@@ -1,0 +1,9 @@
+ ListTile(
+                  title: Text("الصفحة الرئيسية"), 
+                  tileColor: Colors.blue, //background olor
+                  leading: Icon(Icons.home), befor the title
+                  trailing: Icon(Icons.home_max_rounded), after the title
+                  subtitle:  Text(" الرئيسية"), //under the title
+                  isThreeLine: true, // padding 
+                  dense: true, // minize the title and subtitle
+                ),

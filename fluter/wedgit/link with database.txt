@@ -1,0 +1,49 @@
+// add ur db in .env
+// create models & migration & controller
+// create apis
+// in flutter app instal this package
+https://pub.dev/packages/http
+// create function to get the data
+ Future getData() async {
+    try {
+      var response =
+          await http.get(Uri.parse('http://192.168.43.235/api/all-mobiles/'));
+      if (response.statusCode == 200) {
+        return convert.jsonDecode(response.body);
+      } else {
+        return Future.error("Server Error");
+      }
+    } catch (e) {
+      return Future.error(e);
+    }
+  }
+// in body
+ body: FutureBuilder(
+              future: getData(), // but the function here
+              builder: (BuildContext context, AsyncSnapshot snapshot) {
+                // print(snapshot.data);
+                if (snapshot.hasData) {
+                  return Container(
+                    child: ListView.builder(
+                        itemCount: snapshot.data.length,
+                        itemBuilder: (context, i) {
+                          return ListTile(
+                           
+                            title: Text(snapshot.data[i]['name']),
+                          );
+                        }),
+                  );
+                } else {
+                  return Container(
+                    child: Center(child: Text("No Data found")),
+                  );
+                }
+              }
+              ),
+
+
+
+Inside terminal running ipconfig command gave me IPV4 address: 192.168.1.101 Then I simply replaced this IP address with my 127.0.0.1:8000 in flutter app http requests.
+ And it worked like a charm! For Laravel : php artisan serve --host 192.168.1.101 --port 80
+
+https://www.youtube.com/watch?v=PMggRcf2_do&t=356s

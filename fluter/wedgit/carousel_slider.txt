@@ -1,0 +1,36 @@
+https://github.com/iamnabink/another_carousel_pro
+
+
+dependencies:
+ ...
+  another_carousel_pro:
+     git:
+       url: https://github.com/iamnabink/another_carousel_pro.git
+       ref: master
+
+import 'package:another_carousel_pro/another_carousel_pro.dart';
+
+
+
+SizedBox(
+  height: 200.0,
+  width: 350.0,
+  child: Carousel(
+    images: [ // accept
+      NetworkImage('https://cdn-images-1.medium.com/max/2000/1*GqdzzfB_BHorv7V2NV7Jgg.jpeg'),
+      NetworkImage('https://cdn-images-1.medium.com/max/2000/1*wnIEgP1gNMrK5gZU7QS0-A.jpeg'),
+      ExactAssetImage("assets/images/LaunchImage.jpg")
+    ],
+     dotSize: 4.0, // dot circle size
+	dotIncreaseSize: 4, // dot size when selcting
+      dotSpacing: 15.0, // space between dot
+      dotColor: Colors.lightGreenAccent, // dot color
+      indicatorBgPadding: 5.0,
+      dotBgColor: Colors.purple.withOpacity(0.5),  // background color with opectity
+        borderRadius: true,
+      radius: Radius.circular(10) ,
+overlayShadow: true,overlayShadow: true,
+      moveIndicatorFromBottom: 180.0,
+      noRadiusForIndicator: true,
+  )
+),

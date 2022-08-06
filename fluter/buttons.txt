@@ -1,0 +1,63 @@
+توجد عدة انواع من الازار
+
+1 - يوجد داخل scaflled
+ onPressed: () {  }, لازم تكون في اي زر
+
+ floatingActionButton: FloatingActionButton(
+              onPressed: () {},
+              child: Icon(Icons.ac_unit_rounded),
+              backgroundColor: Colors.white,
+              foregroundColor: Colors.blue[600],
+            ),
+2 - FlatButton => debercated
+FlatButton(
+ onPressed: () {  },
+                child: Text(
+                  "عنـــــــا",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 23,
+                    fontFamily: "Cairo",
+                  ),
+                ),
+              ),
+3 - TextButton
+TextButton(
+ onPressed: () {  },
+                child: Text(
+                  "عنـــــــا",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 23,
+                    fontFamily: "Cairo",
+                  ),
+                ),
+              ),
+4 - ElevatedButton
+ ElevatedButton(
+                    onPressed: (){},
+                  child: Text(
+                        "0922318333",
+                      
+                      ),
+                      ),
+5 -ElevatedButton.icon
+ ElevatedButton.icon(
+   style: ElevatedButton.styleFrom(
+                      
+                    ), => style the buttom
+                    onPressed: (){},
+                  label: Text(
+                        "0922318333",
+                      
+                      ), icon: Icon(Icons.access_time_filled),
+                      ),
+6 - OutlinedButton
+ OutlinedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(),
+                    child: Text(
+                      "0922318333",
+                    ),
+                  ),
+https://www.geeksforgeeks.org/flutter-appbar-widget/?ref=leftbar-rightbar

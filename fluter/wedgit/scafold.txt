@@ -1,0 +1,38 @@
+Scaffold(
+        appBar: AppBar(     // appbar 
+          title: Text('Material App Bar'),
+actions: [],
+ centerTitle: true, // to center the title
+elevation: 50, // control the shadow in navbar
+leading: ,
+titleSpacing: 20, // space between the title and leading
+ brightness: Brightness.dark, //chang the color of battery .. 
+        ),
+
+backgroundColor: Colors.blue,  // background color
+endDrawer: Drawer( // slide navebar
+          child: ListView(
+            // ignore: prefer_const_literals_to_create_immutables
+            children: [
+              UserAccountsDrawerHeader( // take space like profile
+                currentAccountPicture: CircleAvatar( // pic of user
+                  child: Icon(Icons.person),
+                ),
+                accountName: Text("Monzer Sheko"), 
+                accountEmail: Text("Monzershaker2018@gmail.com"),
+                decoration: BoxDecoration( // style the user account
+                  color: Colors.blue,
+                  image: DecorationImage(
+                    image: AssetImage(
+                      "images/sb7a2.png",
+                    ),
+                    fit: BoxFit.cover, / to cover the wideth and heghit
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ), 
+
+
+// you can fix the colum problem by Listview

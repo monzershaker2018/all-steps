@@ -1,0 +1,20 @@
+git clone link
+git add .
+git status
+git rest head <file name>  // return file 
+git commit -m "ur msg"
+git branch // all brances
+git remote -v // git all remote
+git push origin master
+//add someone to the team
+setting -> collaborators
+git pull origin
+//setting config
+git config --global user.email // show the email in config
+git config --global user.email "monzershaker2018@gmail.com"// set the email in config
+//generate a ssh key
+ssh-keygen -t rsa -b 4096 -C "monzershaker2018@gmail.com"
+//show the content of file
+cat ~/.ssh/id_rsa.pub
+//test the key
+ssh -T git@github.com

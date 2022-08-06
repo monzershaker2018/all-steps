@@ -1,0 +1,2 @@
+change the wp lang :
+- from dashboard go to setting -> genral -> language .

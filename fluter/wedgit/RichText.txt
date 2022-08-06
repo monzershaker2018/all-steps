@@ -1,0 +1,25 @@
+// يستخدم بدلا من ال text لانو يعمل التفاف للنص اذا زاد عن حجم الشاشة ولا نضعه داخل راو
+
+ child: RichText(
+                  text: TextSpan(children: [
+                    TextSpan(
+                      text: "الشاشة : ",
+                      style: GoogleFonts.cairo(
+                        textStyle: TextStyle(
+                          fontSize: 15,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                    TextSpan(
+                      text:
+                          "Amulied 5.5 ",
+                      style: GoogleFonts.cairo(
+                        textStyle: TextStyle(
+                          fontSize: 15,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ]),
+                ),

@@ -1,0 +1,41 @@
+//function print
+void printName(var first, var last) {
+  print("hello $first $last");
+}
+
+//or 
+
+void printName(var first, var last) =>  print("hello $first $last");
+// sum functions
+int su(var n1, var n2)  => n1 + n2;
+
+
+// cast number to integer 
+ int x = 7 ~/ 2;
+  print(x);
+
+//try and catch
+   try {
+    var result = 5 / 2;
+    print(result);
+  } catch (e) {
+    print('dont divide by zero');
+  }
+// create class
+class className{
+//propretry
+//functions
+}
+// in main 
+className c = className();
+ 
+
+ //constractor ==>
+ // 1 - defualt Cons
+  Animal() {
+     print("this is the default Cons");
+  }
+// 2 - prameter Con
+  Animal(this.name, this.voice);
+// 3 -coustem con
+  Animal.nameCon(this.name);
