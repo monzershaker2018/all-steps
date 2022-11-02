@@ -1,0 +1,31 @@
+ 
+using dio
+ Future addCategory(String name) async {
+    Response response = await Dio().post(
+      'http://api.smart-vision-center.com/api/admin/sections',
+      data: {
+        'sec_name': name,
+      },
+      options: Options(
+        contentType: Headers.formUrlEncodedContentType,
+      ),
+    );
+    print(response.data);
+  }
+}
+
+
+
+// using http
+  Future addCategory(String name) async {
+    final http.Response response = await http.post(
+      Uri.parse('http://api.smart-vision-center.com/api/admin/sections'),
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+      body: jsonEncode(<String, String>{
+        'sec_name': name,
+      }),
+    );
+  }
+}

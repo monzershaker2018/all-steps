@@ -1,0 +1,18 @@
+  RegExp regExp = RegExp(
+      r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
+
+  String? validEmail(value) {
+    if (value == null || value.trim().isEmpty) {
+      return ' البريد الالكتروني مطلوب';
+    }
+    if (value.length < 4) {
+      return "البريد الالكتروني قصير جدا";
+    }
+    if (value.length > 20) {
+      return "البريد الالكتروني طويل جدا";
+    }
+    if (!regExp.hasMatch(value)) {
+      return "البريد الإلكتروني غير صالح";
+    }
+    return null;
+  }

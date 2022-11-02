@@ -1,0 +1,7 @@
+onPressed:(){
+     if (_loginState.currentState!.validate()) {
+    print("Validated");
+  }else{
+      print("Not Validated");
+  }
+}

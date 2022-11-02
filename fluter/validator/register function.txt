@@ -1,0 +1,42 @@
+ Future signup() async {
+    try {
+      var data = {
+        "name": name.text,
+        "email": email.text,
+        "password": password.text,
+      };
+      var head = {"Accept": "application/json"};
+      var formData = _singupState.currentState;
+      if (formData!.validate()) {
+        var url = Uri.parse('http://192.168.43.235/api/users');
+        var response = await http.post(url, headers: head, body: data);
+        //var resposebody = convert.jsonDecode(response.body);
+        if (response.statusCode == 200) {
+          Fluttertoast.showToast(
+              msg: "تم إنشاء حساب جديد بنجاح",
+              toastLength: Toast.LENGTH_SHORT,
+              gravity: ToastGravity.CENTER,
+              timeInSecForIosWeb: 1,
+              backgroundColor: Colors.green,
+              textColor: Colors.white,
+              fontSize: 16.0);
+          Navigator.push(context,
+              new MaterialPageRoute(builder: (context) => new Login()));
+
+          // print('Response status: ${response.statusCode}');
+          // print('Response body: ${response.body}');
+        } else {
+          return Fluttertoast.showToast(
+              msg: "البريد الإلكتروني موجود مسبقا",
+              toastLength: Toast.LENGTH_SHORT,
+              gravity: ToastGravity.CENTER,
+              timeInSecForIosWeb: 1,
+              backgroundColor: Colors.red,
+              textColor: Colors.white,
+              fontSize: 16.0);
+        }
+      }
+    } on Exception catch (e) {
+      return Future.error(e);
+    }
+  }

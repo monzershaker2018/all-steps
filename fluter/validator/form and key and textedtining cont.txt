@@ -1,0 +1,13 @@
+TextEditingController name = TextEditingController();
+  TextEditingController email = TextEditingController();
+  TextEditingController password = TextEditingController();
+  TextEditingController confirmPassword = TextEditingController();
+
+  final _singupState = GlobalKey<FormState>();
+
+
+
+
+   Form(
+                  // autovalidateMode: AutovalidateMode.onUserInteraction,
+                  key: singState,

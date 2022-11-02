@@ -1,0 +1,29 @@
+// using http
+Future updateCategory(String id, String sec_name) async {
+  final http.Response response = await http.put(
+    Uri.parse('http://api.smart-vision-center.com/api/admin/sections/$id'),
+    headers: <String, String>{
+      'Content-Type': 'application/json; charset=UTF-8',
+    },
+    body: jsonEncode(<String, String>{
+      'id': id,
+      'sec_name': sec_name,
+    }),
+  );
+
+  return response;
+}
+
+// using dio
+ Future updateCategory(String id, String sec_name) async {
+    var response = await Dio().put(
+      'http://api.smart-vision-center.com/api/admin/sections',
+      data: {'id': id, 'sec_name': sec_name},
+      options: Options(
+        contentType: Headers.formUrlEncodedContentType,
+      ),
+    );
+    print(response.data);
+    return response.data;
+  }
+}

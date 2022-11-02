@@ -1,0 +1,29 @@
+// using http
+  Future getCategories() async {
+    try {
+      var url =
+          Uri.parse('http://api.smart-vision-center.com/api/admin/sections');
+      var response = await http.get(url);
+      if (response.statusCode == 200) {
+        var resposebody = convert.jsonDecode(response.body);
+        return resposebody;
+      } else {
+        print("no data found");
+      }
+    } catch (e) {
+      return Future.error(e);
+    }
+  }
+
+// using dio
+ Future getCategories() async {
+    try {
+      Response response = await Dio()
+          .get('http://api.smart-vision-center.com/api/admin/sections');
+      if (response.statusCode == 200) {
+        return response.data;
+      }
+    } catch (e) {
+      print(e);
+    }
+  }

@@ -1,0 +1,32 @@
+ 
+using dio
+Future deleteCategory(String id) async {
+    try {
+      var response = await Dio().delete(
+        'http://api.smart-vision-center.com/api/admin/sections/$id',
+        data: {'id': id},
+        options: Options(
+          contentType: Headers.formUrlEncodedContentType,
+        ),
+      );
+      print(response.data);
+      return response.data;
+    } catch (e) {
+      print(e);
+    }
+  }
+
+
+// using http
+  Future deleteCategory(String id) async {
+    final http.Response response = await http.post(
+      Uri.parse('http://api.smart-vision-center.com/api/admin/sections/$id'),
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+      body: jsonEncode(<String, String>{
+        'id': id,
+      }),
+    );
+  }
+}

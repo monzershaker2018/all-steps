@@ -1,0 +1,52 @@
+// login function
+  Future singin() async {
+    try {
+      var form = singState.currentState;
+      form?.save();
+
+      var data = {
+        "email": emaill.text,
+        "password": passwordl.text,
+      };
+      // print(data);
+      var head = {"Accept": "application/json"};
+      if (form!.validate()) {
+        var url = Uri.parse('http://192.168.43.235/api/user-login');
+        var response = await http.post(url, headers: head, body: data);
+
+        if (response.statusCode == 200) {
+          var resposebody = convert.jsonDecode(response.body);
+          // print(resposebody['id']);
+          saveToSharedPreferences(
+              resposebody['name'], resposebody['email'], resposebody['id']);
+          Fluttertoast.showToast(
+              msg: "تم تسجيل الدخول بنجاح",
+              toastLength: Toast.LENGTH_SHORT,
+              gravity: ToastGravity.CENTER,
+              timeInSecForIosWeb: 1,
+              backgroundColor: Colors.green,
+              textColor: Colors.white,
+              fontSize: 16.0);
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => MyHome()));
+        } else {
+          return Fluttertoast.showToast(
+              msg: " بيانات الإعتماد غير صحيحة",
+              toastLength: Toast.LENGTH_SHORT,
+              gravity: ToastGravity.CENTER,
+              timeInSecForIosWeb: 1,
+              backgroundColor: Colors.red,
+              textColor: Colors.white,
+              fontSize: 16.0);
+        }
+      }
+    } on Exception catch (e) {
+      return Future.error(e);
+    }
+  }
+
+  @override
+  void initState() {
+    singin();
+    super.initState();
+  }

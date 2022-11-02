@@ -1,0 +1,11 @@
+// save login data to shared prefernces
+  saveToSharedPreferences(String username, String email, var userid) async {
+    var pre = await SharedPreferences.getInstance();
+    pre.setString("username", username.toString());
+    pre.setString("email", email.toString());
+    pre.setString("userid", userid.toString());
+
+    print(pre.getString("username"));
+    print(pre.getString("email"));
+    print(pre.getString("userid"));
+  }
